@@ -36,16 +36,10 @@ public class TextReader {
 		}
 	}
 
-	public static void log(Status... status) {
-		for (Status s : status) {
-			logger.info(s.name());
-		}
-	}
-
-	public static void main(String[] args) {
-		log(Status.START);
+	public static void main(String... args) {
+		logger.info(Status.START.name());
 		new TextReader(args[0]).execute();
-		log(Status.END);
+		logger.info(Status.END.name());
 	}
 
 }
